@@ -11,15 +11,7 @@
 # Normal rules (sorted alphabetically)
 #
 .*
-!cmpe283/cmpe283-1.dwo
-!cmpe283/cmpe283-1.ko
-!cmpe283/cmpe283-1..mod
-!cmpe283/cmpe283-1.mod.c
-!cmpe283/cmpe283-1.mod.dwo
-!cmpe283/cmpe283-1.mod.o
-!cmpe283/cmpe283-1.o
-!cmpe283/modules.order
-!cmpe283/Module.symvers
+
 *.a
 *.asn1.[ch]
 *.bin
@@ -76,6 +68,16 @@ modules.order
 /modules.builtin.modinfo
 /modules.nsdeps
 
+
+!cmpe283/cmpe283-1.dwo
+!cmpe283/cmpe283-1.ko
+!cmpe283/cmpe283-1..mod
+!cmpe283/cmpe283-1.mod.c
+!cmpe283/cmpe283-1.mod.dwo
+!cmpe283/cmpe283-1.mod.o
+!cmpe283/cmpe283-1.o
+!cmpe283/modules.order
+!cmpe283/Module.symvers
 #
 # RPM spec file (make rpm-pkg)
 #
