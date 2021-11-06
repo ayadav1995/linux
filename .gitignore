@@ -11,6 +11,7 @@
 # Normal rules (sorted alphabetically)
 #
 .*
+!cmpe283/
 *.a
 *.asn1.[ch]
 *.bin
