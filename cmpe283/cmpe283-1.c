@@ -74,7 +74,7 @@ struct capability_info procbased[21] =
 /*
 * Procbased_ctls2 Controls
 */
-struct capability_info procbased_ctls2[23] =
+struct capability_info procbased_ctls2[27] =
 {
 	{ 0, "Virtualize APIC accesses" },
 	{ 1, "Enable EPT" },
@@ -98,13 +98,17 @@ struct capability_info procbased_ctls2[23] =
 	{ 19, "Conceal VMX nonroot operation from Intel PT" },
 	{ 20, "Enable XSAVES/XRSTORS" },
 	{ 22, "Mode-based execute control for EPT" },
-	{ 25, "Use TSC scaling" }
+	{ 23, "Sub-page write permissions for EPT"},
+	{ 24, "Intel PT uses guest physical addresses"},
+	{ 25, "Use TSC scaling" },
+	{ 26, "Enable user wait and pause"},
+	{ 28, "Enable ENCLV exiting"}
 };
 
 /*
  * Entry Controls
  */
-struct capability_info entry_ctls[9] =
+struct capability_info entry_ctls[12] =
 {
 	{ 2, "Load debug controls" },
 	{ 9, "IA-32e mode guest" },
@@ -114,14 +118,17 @@ struct capability_info entry_ctls[9] =
 	{ 14, "Load IA32_PAT" },
 	{ 15, "Load IA32_EFER" },
 	{ 16, "Load IA32_BNDCFGS" },
-	{ 17, "Conceal VM entries from Intel PT" }
+	{ 17, "Conceal VM entries from Intel PT" },
+	{ 18, "Load IA32_RTIT_CTL"},
+	{ 20, "Load CET state"},
+	{ 22, "Load PKRS"}
 };
 
 
 /*
  * Exit Controls 
  */
-struct capability_info exit_ctls[11] =
+struct capability_info exit_ctls[14] =
 {
 	{ 2, "Save debug controls" },
 	{ 9, "Host addressspace size" },
@@ -198,19 +205,19 @@ detect_vmx_features(void)
 	rdmsr(IA32_VMX_PROCBASED_CTLS2, lo, hi);
 	pr_info("SecondaryProcbased Controls MSR: 0x%llx\n",
 		(uint64_t)(lo | (uint64_t)hi << 32));
-	report_capability(procbased_ctls2, 23, lo, hi);
+	report_capability(procbased_ctls2, 27, lo, hi);
 
 	/* VMExit controls */
 	rdmsr( IA32_VMX_EXIT_CTLS, lo, hi);
 	pr_info("Exit Controls MSR: 0x%llx\n",
 		(uint64_t)(lo | (uint64_t)hi << 32));
-	report_capability(exit_ctls, 9, lo, hi);
+	report_capability(exit_ctls, 14, lo, hi);
 
 	/* VMEntry controls */
 	rdmsr(IA32_VMX_ENTRY_CTLS, lo, hi);
 	pr_info("Entry Controls MSR: 0x%llx\n",
 		(uint64_t)(lo | (uint64_t)hi << 32));
-	report_capability(entry_ctls, 11, lo, hi);
+	report_capability(entry_ctls, 12, lo, hi);
 }
 
 /*
