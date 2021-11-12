@@ -27,6 +27,7 @@ Abhishek Yadav
 - Edit the .config file to disable errors due to keys 
 - Run sequence of make commands to compile the linux source code
 - Create our kernel module and insert into the kernel
+- Push the created modules to the forked repo
 - Check the capability info and remove kernel module 
 
 
