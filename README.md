@@ -17,7 +17,7 @@ Pratiksha Shukla:
 - configure the VM to be able to run the make commands by installing necessary tools
    run certain install commands 
    like libncurses-dev flex bison openssl etc
-- Created ReadMe file and document the steps followed
+- Document the steps followed to be included in the ReadMe file
 
 Abhishek Yadav
 - Fork the original torvalds/linux repository to personal github
