@@ -33,16 +33,15 @@ Abhishek Yadav
 
 ##### Steps involved in completing the assignment
 
--Download and install VMware workstation
--Download ubuntu iso file
--Create a ubuntu virtual machine on vmware workstation.
--Setup Ubuntu selecting 200 GB of space and 5gb of memory
--Go into settings of the virtual machine and in the processor section , 
+- Download and install VMware workstation
+- Download ubuntu iso file
+- Create a ubuntu virtual machine on vmware workstation.
+- Setup Ubuntu selecting 200 GB of space and 5gb of memory
+- Go into settings of the virtual machine and in the processor section , 
  check the checkboxes for virtualization capabilities
-
--Fork the original linux repository from torvalds/linux into your github
--In the ubuntu virtual machine terminal run the command cat /proc/cpuinfo to check that 
- vmx flags are present and virtualization capabilities are present for the VM.
+- Fork the original linux repository from torvalds/linux into your github
+- In the ubuntu virtual machine terminal run the command cat /proc/cpuinfo to check that 
+  vmx flags are present and virtualization capabilities are present for the VM.
 - Install git on the VM by using the command "sudo apt-get-install git"
 - Clone the repository which we forked earlier from torvalds/linux
 - Run cd linux to siwtch to the repo which we just cloned
