@@ -3,11 +3,11 @@
 ### Assignment-1
 
 
-##### Team Members
-Pratiksha Shukla
-Abhishek Yadav
+#### Team Members
+- Pratiksha Shukla
+- Abhishek Yadav
 
-##### Team Members contribution
+#### Team Members contribution
 
 Pratiksha Shukla:
 - Downloaded and configured VMWare workstation
@@ -31,7 +31,7 @@ Abhishek Yadav
 
 
 
-##### Steps involved in completing the assignment
+#### Steps involved in completing the assignment
 
 - Download and install VMware workstation
 - Download ubuntu iso file
