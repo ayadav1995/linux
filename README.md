@@ -7,6 +7,28 @@
 Pratiksha Shukla
 Abhishek Yadav
 
+##### Team Members contribution
+
+Pratiksha Shukla:
+- Downloaded and configured VMWare workstation
+- Set up ubuntu OS using ubuntu iso file and turn on virtualizing capabilities 
+- Install and configure git and clone the created repo 
+- Download and add the .c and the makefile from canvas and add to our cloned repo under the cmpe283 folder
+- configure the VM to be able to run the make commands by installing necessary tools
+   run certain install commands 
+   like libncurses-dev flex bison openssl etc
+
+Abhishek Yadav
+- Fork the original torvalds/linux repository to personal github
+- Edit the .c file to add the capability info for the primary procbased controls, secondary procbased controls,
+ entry and exit controls after referring to the SDM volume 3 module 23.6.x and 23.7 and 23.8
+- Run make menuconfig and  copy current config to .config
+- Edit the .config file to disable errors due to keys 
+- Run sequence of make commands to compile the linux source code
+- Create our kernel module and insert into the kernel
+- Check the capability info and remove kernel module 
+
+
 
 ##### Steps involved in completing the assignment
 
