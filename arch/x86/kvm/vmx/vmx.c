@@ -5936,20 +5936,10 @@ static int __vmx_handle_exit(struct kvm_vcpu *vcpu, fastpath_t exit_fastpath)
         u32 exit_rsn = exit_reason.basic; 
 
 
- 
-       // exit_per_reason[exit_reason]++; 
-       // total_exits++;
 
-
-        if(exit_rsn>=0 && exit_rsn<=69){
-                
-
-         if(exit_rsn!=35 && exit_rsn!=38 && exit_rsn!=42 && exit_rsn!=65){
                  exit_per_reason[(int)exit_rsn]++;
                  total_exits++;  
-                   }          
-
- }
+    
 
 
 	/*
