@@ -120,3 +120,7 @@ Abhishek Yadav
 - We can use the command "cpuid -l 0x4fffffffd -s {exit_reason}" where exit reason is an integer for the exit reason for which we want to see the number of exits
   We can use it for example as "cpuid -l 0x4ffffffd -s 31" to see the number of exits due to RDMSR .
 
+- Questions for 0x4fffffffd : 
+ - The increase in the number of total exits is not stable. We sometimes see an increase of 422 exits and the other time we see an increase of 677 or 700. 
+   For a full vm reboot we noted around 1174554 exits. 
+ - The most frequent exits from the ones defined in the sdm are  and the least are  
