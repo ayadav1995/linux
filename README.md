@@ -84,4 +84,39 @@ Abhishek Yadav
     "sudo rmmod cmpe283-1"
    - run "dmesg" to check the exit message ""CMPE 283 Assignment 1 Module Exits"
 
- 
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+#### ASSIGNMENT 2
+
+
+#### Team Members contribution
+
+Pratiksha Shukla:
+
+
+Abhishek Yadav
+
+
+
+#### Steps to complete
+
+- Start with the Assignment-1 setup
+- Modify the cpuid.c file and vmx.c file  and 0x4ffffffd
+- Return the total no. of exits in eax for leafnode for eax values as 0x4fffffff 
+- Retrun the number of exits in eax for the exit type provided in ecx when the leaf node value is 0x4ffffffd
+- save the modifications in both the files
+- Run the following sequence of commands
+- make -j 4 modules
+- make INSTALL_MOD_STRIP=1 modules_install && make install
+- run "lsmod | grep kvm" to see if the module is already loaded
+- if the comamnd returns that the module is already loaded run "rmmod kvm" and "rmmod kvm_intel" if both are present
+- run "modprobe kvm"
+- Now in order to test the modifications we made to kvm we need to install a VM inside our VM
+- From the ubuntu software center install virtual machine manager
+- Download the ubuntu iso file and install a ubuntu VM following the same steps followed in Assignment-1
+- Once installed, in the terminal of our inner VM install the cpuid package using the command "sudo apt-get install cpuid"
+- Now we can use the commands "cpuid -l 0x4fffffff" to see the total exits returned in eax 
+- We can use the command "cpuid -l 0x4fffffffd -s {exit_reason}" where exit reason is an integer for the exit reason for which we want to see the number of exits
+  We can use it for example as "cpuid -l 0x4ffffffd -s 31" to see the number of exits due to RDMSR .
+
