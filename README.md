@@ -134,6 +134,5 @@ Abhishek Yadav
 ![Screenshot (191)](https://user-images.githubusercontent.com/89236413/142789612-91f143fa-e304-4687-8aba-fa88f6408cf6.png)
 
 - Questions for 0x4fffffffd : 
- - The increase in the number of total exits is not stable. We sometimes see an increase of 422 exits and the other time we see an increase of 677 or 700. 
-   For a full vm reboot we noted around 1174554 exits. 
- - The most frequent exits from the ones defined in the sdm are  and the least are  
+ - The increase in the number of total exits is not stable. We sometimes see an increase of 422 exits and the other time we see an increase of 677 or 700. We notice a lot of        exits for EPT violations , MSR access , IO Instructions.For a full vm reboot we noted around 1174554 exits. 
+ - The most frequent exits are EPT violations and MSR access and the least frequent eits are 0 (for VMWRITE, triple fault, etc) and there are very few exits for DR_Access,APIC      access.
