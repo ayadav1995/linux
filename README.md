@@ -93,10 +93,17 @@ Abhishek Yadav
 #### Team Members contribution
 
 Pratiksha Shukla:
-
+- Modify the vmx.c file 
+- install virtual machine manager on the VM
+- install ubuntu on a inner VM using the virtiual machine manager
+- install the cpuid package on the innervm
+- Test the modifications made for leafnodes using cpuid package in the inner VM
 
 Abhishek Yadav
-
+- Find the missing and disabled exits by referring to the sdm. 
+- Modify the cpuid.c file based on the findings
+- run the commands required to build the module after the modifications
+- Test the modifications made for leafnodes using cpuid package in the inner VM
 
 
 #### Steps to complete
