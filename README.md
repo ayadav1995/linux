@@ -142,6 +142,10 @@ Abhishek Yadav
 
 #### ASSIGNMENT 3
 
+- to modify the CPUID emulation code in KVM to report back additional information when special CPUID leaf nodes are requested.
+- Implemented in assignment :
+- CPUID leaf node %eax=0x4FFFFFFE
+- CPUID leaf node %eax=0x4FFFFFFC and exit reason as input in ecx
 
 #### Team Members contribution
 
