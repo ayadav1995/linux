@@ -136,3 +136,40 @@ Abhishek Yadav
 - Questions for 0x4fffffffd : 
  - The increase in the number of total exits is not stable. We sometimes see an increase of 422 exits and the other time we see an increase of 677 or 700. We notice a lot of        exits for EPT violations , MSR access , IO Instructions.For a full vm reboot we noted around 1174554 exits. 
  - The most frequent exits are EPT violations and MSR access and the least frequent exits are 0 (for VMWRITE, triple fault, etc) and there are very few exits for DR_Access,APIC      access.
+
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+#### ASSIGNMENT 3
+
+
+#### Team Members contribution
+
+Pratiksha Shukla:
+- Modify the vmx.c file 
+- Test the modifications made for leafnodes using cpuid package in the inner VM
+
+Abhishek Yadav
+- Modify the cpuid.c file based on the findings
+- Test the modifications made for leafnodes using cpuid package in the inner VM
+
+
+#### Steps to complete
+
+- Start with the Assignment-2 setup
+- Modify the cpuid.c file and vmx.c file  as follows
+- When the leafnode eax value is 0x4FFFFFFE,Return the high 32 bits of the total time spent processing all exits in %ebx and the low 32 bits of the total time spent processing     all exits in %ecx. We achieve this by declaring a variable to store the total time and adding the time spent processing each exit(calculated by reading timestamp before and     after the exit) to this total time.
+- When the leafnode eax value is 0x4FFFFFFC and there is exit number provided in ecx as input, Return the time spent processing that particular exit  Return the high 32 bits of   the total time spent for that exit in %ebx and the low 32 bits of the total time spent for that exit in %ecx. We adhieve this by declaring an array for all the exits and         storing time spent for each exit in the corresponding array element.
+- save the modifications in both the files
+- Run the following sequence of commands
+- make -j 4 modules
+- make INSTALL_MOD_STRIP=1 modules_install && make install
+- run "lsmod | grep kvm" to see if the module is already loaded
+- if the comamnd returns that the module is already loaded run "rmmod kvm" and "rmmod kvm_intel" if both are present
+- run "modprobe kvm"
+- Now in order to test the modifications we made we can open the nested VM we have installed in the assignment-2 steps
+- Now In the terminal we can use the commands "cpuid -l  0x4FFFFFFE" to see the total time spent processing all exits in ebx and ecx.
+- We can use the command "cpuid -l 0x4FFFFFFC -s {exit_reason}" to see the total time spent processing the exit provided in {exit_reason}.
+- Questions for 0x4fffffffc : 
+- The increase in the number of total exits is not stable. We notice a very high number of exits for  MSR access.For a full vm reboot we noted around 1174554 exits. 
+- The most frequent exits are EPT violations and MSR access and the least frequent exits are 0 (for VMWRITE, triple fault, etc) and there are few exits for DR_Access,APIC         access.
