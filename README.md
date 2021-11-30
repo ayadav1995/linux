@@ -174,6 +174,8 @@ Abhishek Yadav
 - Now in order to test the modifications we made we can open the nested VM we have installed in the assignment-2 steps
 - Now In the terminal we can use the commands "cpuid -l  0x4FFFFFFE" to see the total time spent processing all exits in ebx and ecx.
 - We can use the command "cpuid -l 0x4FFFFFFC -s {exit_reason}" to see the total time spent processing the exit provided in {exit_reason}.
+- ![Screenshot (195)](https://user-images.githubusercontent.com/89236413/143999757-7f0444a7-ae14-4001-b608-8aaa8e8cda66.png)
+
 - Questions for 0x4fffffffc : 
 - The increase in the number of total exits is not stable. We notice a very high number of exits for  MSR access.For a full vm reboot we noted around 1174554 exits. 
 - The most frequent exits are EPT violations and MSR access and the least frequent exits are 0 (for VMWRITE, triple fault, etc) and there are few exits for DR_Access,APIC         access.
