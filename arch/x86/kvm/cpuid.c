@@ -1243,6 +1243,7 @@ EXPORT_SYMBOL_GPL(kvm_cpuid);
 int kvm_emulate_cpuid(struct kvm_vcpu *vcpu)
 {
 	u32 eax, ebx, ecx, edx;
+	int i;
         
 	if (cpuid_fault_enabled(vcpu) && !kvm_require_cpl(vcpu, 0))
 		return 1;
@@ -1318,6 +1319,16 @@ int kvm_emulate_cpuid(struct kvm_vcpu *vcpu)
       }
 
 
+	printk("------PRINTING THE TOTAL EXITS FOR EACH EXIT TYPE------");
+	for(i=0; i<69;i++){
+			
+		
+		if(i !=35 && i !=38 && i !=42  && i != 65 && i!=3 && i!=4 && i!=5 && i!=6 && i!=11 && i!=34 && i!=33 && i!=51 && i<63){
+			
+			printk("Exit no : %d  -------  %d", i, (int)exit_per_reason[i]);
+			
+		}
+	}
 
 	kvm_rax_write(vcpu, eax);
 	kvm_rbx_write(vcpu, ebx);
