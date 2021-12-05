@@ -179,3 +179,38 @@ Abhishek Yadav
 - Questions for 0x4fffffffc : 
 - The increase in the number of total exits is not stable. We notice a very high number of exits for  MSR access.For a full vm reboot we noted around 1174554 exits. 
 - The most frequent exits are EPT violations and MSR access and the least frequent exits are 0 (for VMWRITE, triple fault, etc) and there are few exits for DR_Access,APIC         access.
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+#### ASSIGNMENT 4 
+Nested Paging vs. Shadow Paging
+
+
+#### Team Members contribution
+
+Pratiksha Shukla:
+- Modify the vmx.c file 
+- Test the modifications made for leafnodes using cpuid package in the inner VM
+
+Abhishek Yadav
+- Modify the cpuid.c file based on the findings
+- Test the modifications made for leafnodes using cpuid package in the inner VM
+
+#### Steps to complete
+
+- Start with the Assignment-3 setup
+- Run dmesg command to see the current count of exits for all the exit reasons
+- With EPT :
+![Screenshot (198)](https://user-images.githubusercontent.com/89236413/144729353-5c557296-872a-4ef7-986d-4e820e4f8927.png)
+
+- After insterting the module with ept =0  :
+![Screenshot (207)](https://user-images.githubusercontent.com/89236413/144729399-175aa5fe-47fc-4a84-9e20-e6f814aa974a.png)
+
+
+- Answers to questions based on our obeservations:
+- The output of exits is not what we expected after observing the exits in nested paging. For some of the exits which were very low or not present in case of nested paging, we     see a lot of exits with shadow paging.
+- Contrary to what we see in nested paging , in shadow paging we do not see EPT exits, rather we see most exits in case of CR_ACCESS. We also see exits for INVLPG , INVPCID 
+
+
