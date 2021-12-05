@@ -191,12 +191,11 @@ Nested Paging vs. Shadow Paging
 #### Team Members contribution
 
 Pratiksha Shukla:
-- Modify the vmx.c file 
-- Test the modifications made for leafnodes using cpuid package in the inner VM
+- Note the exit counts with assignment 3 configuration and record observations
 
 Abhishek Yadav
-- Modify the cpuid.c file based on the findings
-- Test the modifications made for leafnodes using cpuid package in the inner VM
+- Make changes to configure shadow paging instead of nested paging
+- Note the exit counts for shadow paging and record observations
 
 #### Steps to complete
 
@@ -211,6 +210,6 @@ Abhishek Yadav
 
 - Answers to questions based on our obeservations:
 - The output of exits is not what we expected after observing the exits in nested paging. For some of the exits which were very low or not present in case of nested paging, we     see a lot of exits with shadow paging.
-- Contrary to what we see in nested paging , in shadow paging we do not see EPT exits, rather we see most exits in case of CR_ACCESS. We also see exits for INVLPG , INVPCID 
+- Contrary to what we see in nested paging , in shadow paging we do not see EPT exits, rather we see most exits in case of CR_ACCESS. We also see exits for INVLPG , INVPCID. 
 
 
