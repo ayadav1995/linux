@@ -210,6 +210,6 @@ Abhishek Yadav
 
 - Answers to questions based on our obeservations:
 - The output of exits is not what we expected after observing the exits in nested paging. For some of the exits which were very low or not present in case of nested paging, we     see a lot of exits with shadow paging.
-- Contrary to what we see in nested paging , in shadow paging we do not see EPT exits, rather we see most exits in case of CR_ACCESS. We also see exits for INVLPG , INVPCID. 
+- Contrary to what we see in nested paging , in shadow paging we do not see EPT exits, rather we see most exits in case of CR_ACCESS. We also see exits for INVLPG , INVPCID. We   see a lot of exits in case of CR_ACCESS because now the hypervisor takes exit when control register is accessed and during INVLPG because hypervisor takes exit to invalidate     translations in TLB.  
 
 
